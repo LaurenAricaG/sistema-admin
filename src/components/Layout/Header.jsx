@@ -1,13 +1,34 @@
-import { Bell, ChevronDown, Filter, Menu, Plus, Search, Settings, Sun } from "lucide-react";
-import React from "react";
+import {
+  Bell,
+  ChevronDown,
+  Filter,
+  Menu,
+  Plus,
+  Search,
+  Settings,
+  Sun,
+  Moon,
+} from "lucide-react";
+import React, { useState, useEffect } from "react";
 
-function Header({sideBarCollapsed, onToggleSideBar}) {
+function Header({ sideBarCollapsed, onToggleSideBar }) {
+  const [isDark, setIsDark] = useState(
+  document.documentElement.classList.contains("dark")
+);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDark);
+    localStorage.theme = isDark ? "dark" : "light";
+  }, [isDark]);
   return (
     <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-700/50 px-6 py-4 ">
       <div className="flex items-center justify-between">
         {/* Left section */}
         <div className="flex items-center space-x-4">
-          <button className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer" onClick={onToggleSideBar}>
+          <button
+            className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+            onClick={onToggleSideBar}
+          >
             <Menu className="w-5 h-5 " />
           </button>
 
@@ -44,8 +65,18 @@ function Header({sideBarCollapsed, onToggleSideBar}) {
           </button>
 
           {/* Toggle */}
-          <button className="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ">
-            <Sun className="w-5 h-5" />
+          <button
+            onClick={() => setIsDark(!isDark)}
+            className="p-2.5 rounded-xl
+                 text-slate-600 dark:text-slate-300
+                 hover:bg-slate-100 dark:hover:bg-slate-800
+                 transition-colors"
+          >
+            {isDark ? (
+              <Sun className="w-5 h-5" />
+            ) : (
+              <Moon className="w-5 h-5" />
+            )}
           </button>
 
           {/* Notifications */}

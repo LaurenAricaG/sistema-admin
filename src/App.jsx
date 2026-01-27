@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "./components/Layout/Sidebar";
 import Header from "./components/Layout/Header";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
   const [sideBarCollapsed, setSideBarCollapsed] = useState(false);
@@ -20,6 +21,12 @@ function App() {
             sideBarCollapsed={sideBarCollapsed}
             onToggleSideBar={() => setSideBarCollapsed(!sideBarCollapsed)}
           />
+
+          <main className="flex-1 overflow-y-auto bg-transparent">
+            <div className="p-6 space-y-6">
+              {currentPage === "dashboard" && <Dashboard />}
+            </div>
+          </main>
         </div>
       </div>
     </div>

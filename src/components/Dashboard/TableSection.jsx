@@ -1,5 +1,4 @@
 import { MoreHorizontal, TrendingDown, TrendingUp } from "lucide-react";
-import React from "react";
 
 const recentOrders = [
   {

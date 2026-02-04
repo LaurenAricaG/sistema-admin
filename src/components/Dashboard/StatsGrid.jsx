@@ -7,7 +7,6 @@ import {
   ShoppingCart,
   Users,
 } from "lucide-react";
-import React from "react";
 
 const stats = [
   {

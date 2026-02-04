@@ -9,7 +9,7 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function Header({ sideBarCollapsed, onToggleSideBar }) {
   const [isDark, setIsDark] = useState(

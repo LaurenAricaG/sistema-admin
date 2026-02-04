@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-import "./app.css"; // ⬅️ obligatorio (Tailwind v4 + custom-variant)
+import "./App.css"; 
 
 // 🌙 inicializar tema ANTES de React
 const storedTheme = localStorage.getItem("theme");

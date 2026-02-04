@@ -1,4 +1,3 @@
-import React from "react";
 import StatsGrid from "./StatsGrid";
 import ChartSection from "./ChartSection";
 import TableSection from "./TableSection";

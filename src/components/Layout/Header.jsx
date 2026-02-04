@@ -36,7 +36,7 @@ function Header({ sideBarCollapsed, onToggleSideBar }) {
             <h1 className="text-2xl font-black text-slate-800 dark:text-white">
               Dashboard
             </h1>
-            <p>Bienvenido, Lauren Arica</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">Bienvenido, Lauren Arica</p>
           </div>
         </div>
 
